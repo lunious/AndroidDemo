@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="bwf.androiddemos">
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <service
+            android:name=".MyService"
+            android:process=":remote"></service>
+
+        <receiver android:name=".MyRevicer">
+            <intent-filter
+                android:priority="1000"><!--  广播的接收等级-->
+
+                <action android:name="com.bwf.action.test"></action>
+
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
